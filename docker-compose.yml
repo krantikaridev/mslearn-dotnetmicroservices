@@ -20,3 +20,14 @@ services:
       dockerfile: Dockerfile
     ports: 
       - "5900:80"
+  frontend-blazor:
+    image: blazorfrontend
+    build:
+      context: frontend-blazor
+      dockerfile: Dockerfile
+    # environment: 
+    #   - backendUrl=http://frontend-blazor
+    ports:
+      - "5000:80"
+    # depends_on: 
+    #   - backend
